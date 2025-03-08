@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1792px;
+    max-height: 1792px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
