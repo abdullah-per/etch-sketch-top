@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>etch-a-sketch</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-        <link rel="stylesheet" href="styles.css">
-        <script defer src="script.js"></script>
-    </head>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h1>Etch-a-sketch</h1>
 
-    <body>
-        <button><div>Enter Dimensions</div></button>
-        <div class="container">
+    <div class="selector">
+        <label for="size">Choose a size:</label>
+        <select name="size" id="size-selector">
+            <option value="2">2x2</option>
+            <option value="4">4x4</option>
+            <option value="8">8x8</option>
+            <option value="16">16x16</option>
+            <option value="32">32x32</option>
+            <option value="64">64x64</option>
+        </select>
+    </div>    
 
-        </div>
-    </body>
+    <div class="box-container"></div>
+</body>
 </html>

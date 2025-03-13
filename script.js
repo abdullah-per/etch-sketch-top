@@ -1,33 +1,28 @@
-const container = document.querySelector(".container");
+const container = document.querySelector(".box-container");
+const totalSize = 450;
 
-function generateDivs(amount) {
-    amount = Number(amount);
-
-    if (amount >= 100) {
-        console.log('too many divs!'); 
-        return;
-    }
-
-    // Removes all children nodes.
-    container.innerHTML = "";
-
-    for (let i = 0; i < (amount**2); i++) {
-        let box = document.createElement("div");
-        box.setAttribute("style", "width: 25px; height: 25px; background-color: grey; margin: 2px;")
-        container.appendChild(box);
-    }
-
+function calcSize(amount) {
+    return [totalSize/amount, totalSize/amount];
 }
 
 
-const button = document.querySelector("button");
-button.addEventListener("click", function() {
-    let divAmt = prompt("How many divs?");
-    generateDivs(divAmt);
-})
+function drawBoxes(amount) {
+    const dimensions = calcSize(amount);
 
-container.addEventListener("mouseover", function(event) {
-    if (event.target === container) { return; }
+    //Clear any previous divs.
+    container.innerHTML = "";
 
-    event.target.style.backgroundColor = `rgb(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}`
+    for (let i = 0; i < (amount**2); i++) {
+        const box = document.createElement("div");
+        box.classList.add("box");
+        box.setAttribute("style", `width: ${dimensions[0]}px; height: ${dimensions[1]}px;`)
+
+        container.appendChild(box);
+    }
+}
+
+drawBoxes(64);
+
+container.addEventListener("mouseover", (event) => {
+    event.target.style.backgroundColor = "black";
 })

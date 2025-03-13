@@ -1,13 +1,35 @@
 * {
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
-.container {
-    max-width: 1792px;
-    max-height: 1792px;
+body {
+    background-color: rgb(194, 194, 194);
+}
+
+h1 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.selector {
+    margin: 0 auto;
+}
+
+.box-container {
+    margin: 80px auto;
+
+    max-width: 450px;
+    min-height: 450px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 8px;
 
     display: flex;
     flex-wrap: wrap;
+}
+
+.box {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
