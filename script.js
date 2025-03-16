@@ -1,4 +1,5 @@
 const container = document.querySelector(".box-container");
+const selector = document.querySelector("#size-selector");
 const totalSize = 450;
 
 function calcSize(amount) {
@@ -21,7 +22,13 @@ function drawBoxes(amount) {
     }
 }
 
-drawBoxes(64);
+//Initial
+drawBoxes(8);
+
+selector.addEventListener("change", (event) => {
+    drawBoxes(event.target.value);
+})
+
 
 container.addEventListener("mouseover", (event) => {
     event.target.style.backgroundColor = "black";
